@@ -6,7 +6,7 @@ export default function Header() {
         src="investment-calculator-logo.png"
         alt="a green bag with '$' logo"
       />
-      <h1 className="text-2xl">React Investment Calculator</h1>
+      <h1 className="text-2xl font-bold">Investment Calculator</h1>
     </header>
   );
 }

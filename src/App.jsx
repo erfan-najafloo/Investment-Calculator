@@ -1,6 +1,8 @@
 import Header from "./components/Header";
 import UserInput from "./components/UserInputs";
 import Result from "./components/Result";
+import customTheme from "./themes/customTheme";
+import { ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 function App() {
   const initialUserInput = {
@@ -20,11 +22,11 @@ function App() {
     });
   }
   return (
-    <>
+    <ThemeProvider theme={customTheme}>
       <Header />
       <UserInput onChange={handleChange} userInput={userInput} />
-      <Result />
-    </>
+      <Result input={userInput} />
+    </ThemeProvider>
   );
 }
 
