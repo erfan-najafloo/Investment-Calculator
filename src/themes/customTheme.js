@@ -14,10 +14,11 @@ const customTheme = createTheme({
           background: "radial-gradient(#303b37, #1a1f1d)",
           color: "#e1eeeb",
           minHeight: "100vh",
-          minWidth: "360px", // حداقل عرض موبایل
+          minWidth: "360px",
         },
       },
     },
+
     // ===== TextField / Input =====
     MuiOutlinedInput: {
       styleOverrides: {
