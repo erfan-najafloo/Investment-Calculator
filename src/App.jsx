@@ -8,11 +8,13 @@ import { CssBaseline } from "@mui/material";
 function App() {
   const initialUserInput = {
     initialInvestment: 10000,
-    annualInvestment: 100,
+    annualInvestment: 1200,
     expectedReturn: 20,
     duration: 10,
   };
+
   const [userInput, setUserInput] = useState(initialUserInput);
+  const validInputs = userInput.duration >= 1;
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
       return {
@@ -27,7 +29,12 @@ function App() {
       <CssBaseline />
       <Header />
       <UserInput onChange={handleChange} userInput={userInput} />
-      <Result input={userInput} />
+      {!validInputs && (
+        <p className="text-center pt-10">
+          Please Enter a Duration greater than zero.
+        </p>
+      )}
+      {validInputs && <Result input={userInput} />}
     </ThemeProvider>
   );
 }
